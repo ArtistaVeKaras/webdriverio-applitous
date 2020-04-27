@@ -32,6 +32,36 @@ class Internet {
    get columnAHeader() { return $('#column-a header') }
    get columnBHeader() { return $('#column-b header') }
 
+   get graggable() { return $('#draggable') }
+   get droppable() { return $('#droppable') }
+
+   get dropdownMenu() { return $('#dropdown') }
+   get dropdownOptions1() {return $('#dropdown option:nth-child(2)') }
+
+   javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
+
+   /*
+   * click the specific javascript alert button
+   * @param {Number} index of the element
+   * */
+   clickJavascriptAlertButton(index){
+      this.javascriptAlertButton(index).waitForDisplayed()
+      this.javascriptAlertButton(index).click()
+   }
+   /*
+   * click on the dropdown menu
+   * */
+   clickDropdownMenu(){
+      this.dropdownMenu.waitForDisplayed()
+      this.dropdownMenu.click()
+   }
+   /*
+   * click dropdown and select option #1
+   * */
+   clickDropdownMenuOption1(){
+      this.dropdownOptions.waitForDisplayed()
+      this.dropdownOptions.click()
+   }
    /*
    Drag and drop columnA to columnB
    remember that drag and drop doesn't always work!!
